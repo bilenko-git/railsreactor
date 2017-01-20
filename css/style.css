@@ -1,0 +1,47 @@
+body {
+   /* background-color: black; */
+}
+
+.container {
+	margin-top: 20px;
+}
+
+.tab.ng-scope .col-md-12 {
+	background-color: #eeeeee;
+	padding: 15px;
+}
+
+.container .nav-pills > li > a {
+	border-radius: 0px !important;
+}
+
+.red.btn {
+    color: #FFFFFF;
+    background-color: #cb5a5e;
+}
+
+.blue.btn {
+    color: #FFFFFF;
+    background-color: #3598dc;
+}
+
+.btns {
+    margin-top: 15px;
+}
+
+.btns .btn {
+	margin: 0px 5px 0px 5px;
+}
+
+.css-form input.ng-invalid, .css-form select.ng-invalid {
+    border: 1px solid #FA787E;
+}
+
+.css-form input.ng-valid,  .css-form select.ng-valid {
+    border: 1px solid #78FA89;
+} 
+
+.view_tabs {
+    color: #337ab7;
+    margin-top: 40px;
+}

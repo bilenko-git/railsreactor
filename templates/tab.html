@@ -1,0 +1,115 @@
+<form name="theForm" class="css-form">
+	<div class="row">
+		<div class="col-md-6">
+			<div class="row">
+			    <ul class="nav nav-pills">
+			        <li ng-class="{'active': active == 'tab_1'}"><a href="#/tab/1" ng-click="validation(1)">User</a></li>
+			        <li ng-class="{'active': active == 'tab_2'}"><a href="#/tab/2" ng-click="validation(2)">Address</a></li>
+			        <li ng-class="{'active': active == 'tab_3'}"><a href="#/tab/3" ng-click="validation(3)">Note</a></li>
+			    </ul>
+			</div>
+			  
+			<div class="row tab" ng-if="active === 'tab_1'">
+			    <div class="col-md-12">			        
+			        <div class="form-group">
+			            <label class="bold">First Name</label>
+			            <input type="text" class="form-control" ng-model="form.first_name" ng-change="add_field({'first_name' : form.first_name})" required>  
+			        </div>
+
+			       	<div class="form-group">
+			            <label class="bold">Last Name</label>
+	            		<input type="text" class="form-control" ng-model="form.last_name" ng-change="add_field({'last_name' : form.last_name})" required>
+			        </div>
+
+			        <div class="form-group">
+			            <label class="bold">Patronymic</label>
+			            <input type="text" class="form-control" ng-model="form.patronymic" ng-change="add_field({'patronymic' : form.patronymic})" required>
+			        </div>
+			    </div>
+			</div>
+
+			<div class="row tab" ng-if="active === 'tab_2'">
+			    <div class="col-md-12">
+			        <div class="form-group">
+			            <label class="bold">Country</label>
+			            <select class="form-control" ng-model="form.country" autocomplete="off" ng-change="add_field({'country' : form.country})" required>
+			            	<option ng-repeat="(key, value) in countries" value="{{ key }}">{{ value }}</option>
+						</select>
+			        </div>
+
+			        <div class="form-group">
+			            <label class="bold">City</label>
+		            	<input type="text" ng-model="form.city" class="form-control" ng-change="add_field({'city' : form.city})" required>
+			        </div>
+
+			        <div class="form-group">
+			            <label class="bold">Street</label>
+		            	<input type="text" ng-model="form.street" class="form-control" ng-change="add_field({'street' : form.street})" required>
+			        </div>
+
+			       <div class="form-group">
+			            <label class="bold">House Number</label>
+			            <input type="number" ng-model="form.house_number" class="form-control" ng-change="add_field({'house_number' : form.house_number})" required>
+			        </div>
+			    </div>
+			</div>
+
+			<div class="row tab" ng-if="active === 'tab_3'">
+			    <div class="col-md-12">
+			        <div class="form-group">
+			            <label class="bold">Note</label>
+			            <textarea ng-model="form.note" class="form-control" autocomplete="off" ng-change="add_field({'note' : form.note})"></textarea>
+			        </div>
+			    </div>
+			</div>
+
+			<div class="row btns">
+			    <div class="col-md-12">
+			         <button class="btn red pull-right" ng-click="resetForm()">Reset</button>
+			         <button class="btn blue pull-right" ng-click="onSubmit()"></i>Save</button>  
+			    </div>
+			</div>
+		</div>
+		<div class="col-md-6 view_tabs">
+			<div class="row">
+                <label class="col-md-4 control-label bold">Last Name:</label>
+                <div class="col-md-6">{{form.last_name}}</div>
+            </div>
+
+			<div class="row">
+                <label class="col-md-4 control-label bold">First Name:</label>
+                <div class="col-md-6">{{form.first_name}}</div>
+            </div>
+
+     		<div class="row">
+                <label class="col-md-4 control-label bold">Patronymic:</label>
+                <div class="col-md-6">{{form.patronymic}}</div>
+            </div>
+
+			<div class="row">
+                <label class="col-md-4 control-label bold">Country Name:</label>
+                <div class="col-md-6">{{form.country_name}}</div>
+            </div>
+
+			<div class="row">
+                <label class="col-md-4 control-label bold">City:</label>
+                <div class="col-md-6">{{form.city}}</div>
+            </div>
+
+        	<div class="row">
+                <label class="col-md-4 control-label bold">Street:</label>
+                <div class="col-md-6">{{form.street}}</div>
+            </div>
+
+        	<div class="row">
+                <label class="col-md-4 control-label bold">House Number:</label>
+                <div class="col-md-6">{{form.house_number}}</div>
+            </div>
+
+         	<div class="row">
+                <label class="col-md-4 control-label bold">Note:</label>
+                <div class="col-md-6">{{form.note}}</div>
+            </div>	
+		</div>
+	</div>
+</form>
